@@ -1,0 +1,59 @@
+DOCKER 
+
+What is docker?
+
+Docker is a software platform for building applications based on containers — small 
+and lightweight execution environments that make shared use of the operating system kernel 
+but otherwise run in isolation from one another. While containers as a concept have been around
+for some time, Docker, an open source project launched in 2013, helped popularize the technology, 
+and has helped drive the trend towards containerization and microservices in software development 
+that has come to be known as cloud-native development.
+
+Docker image
+Once you have your Dockerfile written, you invoke the Docker build utility to create an image based on that Dockerfile. 
+Whereas the Dockerfile is the set of instructions that tells build how to make the image,
+ a Docker image is a portable file containing the specifications for which software components the container 
+will run and how. Because a Dockerfile will probably include instructions about grabbing some software packages from online 
+repositories, you should take care to explicitly specify the proper versions, or else your Dockerfile might produce inconsistent 
+images depending on when it’s invoked. 
+But once an image is created, it’s static. Codefresh offers a look at how to build an image in more detail.
+
+Docker run
+Docker’s run utility is the command that actually launches a container.
+ Each container is an instance of an image. Containers are designed to be transient and temporary,
+ but they can be stopped and restarted, which launches the container into the same state as when it was stopped. 
+Further, multiple container instances of the same image can be run simultaneously (as long as each container has a unique name). 
+The Code Review has a great breakdown of the different options for the run command, to give you a feel for how it works.
+
+Docker Hub
+While building containers is easy, don’t get the idea that you’ll need to build each and every one of your 
+images from scratch. Docker Hub is a SaaS repository for sharing and managing containers, where you will find official
+ Docker images from open-source projects and software vendors and unofficial images from the general public. 
+You can download container images containing useful code, or upload your own, share them openly, or make them private instead.
+ You can also create a local Docker registry if you prefer. (Docker Hub has had problems in th
+e past with images that were uploaded with backdoors built into them.)
+
+Docker Engine
+Docker Engine is the core of Docker, the underlying client-server technology that creates and runs the containers.
+ Generally speaking, when someone says Docker generically and isn’t talking about the company or the overall project,
+ they mean Docker Engine. There are two different versions of Docker Engine on offer:
+ Docker Engine Enterprise and Docker Engine Community.
+
+Docker advantages
+Docker containers provide a way to build enterprise and line-of-business applications that are easier to assemble, maintain,
+ and move around than their conventional counterparts. 
+
+Docker containers enable isolation and throttling
+Docker containers keep apps isolated not on
+ly from each other, but from the underlying system. This not only makes for a cleaner software stack, 
+but makes it easier to dictate how a given containerized application uses system resources—CPU, GPU, memory, I/O, networking, 
+and so on. It also makes it easier to ensure that data and code are kept separate. (See “Docker containers are stateless and immutable,”
+ below.)
+
+
+Docker containers enable portability
+A Docker container runs on any machine that supports the container’s runtime environment. 
+Applications don’t have to be tied to the host operating system, so both the application environment and the underlying operating 
+environment can be kept clean and minimal.
+For instance, a MySQL for Linux container will run on most any Linux system that supports containers. All of the dependencies 
+for the app are typically delivered in the same container.
